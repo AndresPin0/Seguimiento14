@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="608.0" style="-fx-background-color: #4F5658;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.StopWatchFX">
+   <children>
+      <Label fx:id="stopwatch" layoutX="92.0" layoutY="108.0" prefHeight="60.0" prefWidth="201.0" text="00:00:00" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="14.0" text="Stopwatch" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="424.0" layoutY="14.0" text="Stopwatch" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listLaps" layoutX="371.0" layoutY="51.0" prefHeight="279.0" prefWidth="215.0" style="-fx-background-color: #545E60;" />
+      <Button fx:id="lapButton" layoutX="54.0" layoutY="229.0" mnemonicParsing="false" onAction="#addLap" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Lap" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="ResetButton" layoutX="258.0" layoutY="229.0" mnemonicParsing="false" onAction="#resetStopwatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Reset" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="startButton" layoutX="156.0" layoutY="229.0" mnemonicParsing="false" onAction="#initializeStopWatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Start" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

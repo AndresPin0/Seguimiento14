@@ -1,5 +1,5 @@
 
-package application;
+package application.Controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

@@ -1,6 +1,7 @@
-package application;
+package application.Controller;
 
 
+import application.Controller.DateTimeZoneSelectedFX;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +29,9 @@ public class SampleController implements Initializable {
 
     @FXML
     private Label Date;
+
+    @FXML
+    private Button initStopwatch;
 
     @FXML
     private ListView<String> listZone;
@@ -105,7 +110,7 @@ public class SampleController implements Initializable {
             }
         });
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("DateTimeZoneSelected.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/DateTimeZoneSelected.fxml"));
             Parent root = (Parent)loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -114,6 +119,20 @@ public class SampleController implements Initializable {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
 
+    @FXML
+    private void initializeSW(ActionEvent event){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Stopwatch.fxml"));
+
+            Parent root = (Parent)loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }

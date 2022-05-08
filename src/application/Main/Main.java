@@ -1,21 +1,20 @@
-package application;
+package application.Main;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Objects;
 
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+            BorderPane root = (BorderPane)FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../FXML/Sample.fxml")));
             Scene scene = new Scene(root,586,328);
+            //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("../Styles/TableView.css")).toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("Clock");
             primaryStage.show();
