@@ -11,4 +11,4 @@
 
 
 ### Authors:
-* Andrés Pino `<link>` : <https://github.com/AndresPin0>
+* Andrés Pino - @AndresPin0
