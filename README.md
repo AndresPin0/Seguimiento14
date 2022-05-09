@@ -1,6 +1,6 @@
-##Seguimiento14
+#Seguimiento14
 
-###Funcionalidades:
+#Funcionalidades:
 - Muestra la interfaz de un reloj totalmente funcional (Actualmente, con zona horaria de America/Bogota).
 - Motrar la hora de acuerdo a la zona horaria seleccionada.
 - Usar un cronometro que llega hasta las horas. 
