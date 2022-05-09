@@ -1,7 +1,6 @@
 package application.Controller;
 
 
-import application.Controller.DateTimeZoneSelectedFX;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,6 +22,8 @@ import java.text.SimpleDateFormat;
 
 public class SampleController implements Initializable {
     private DateTimeZoneSelectedFX sl;
+    @FXML
+    private Label tmp;
 
     @FXML
     private Label hour_minutes;
@@ -44,7 +45,6 @@ public class SampleController implements Initializable {
         actualTime();
         actualDate();
         setListZone();
-        setZone();
     }
 
     private void actualDate(){
@@ -83,13 +83,6 @@ public class SampleController implements Initializable {
         thread.start();
     }
 
-    private void setZone(){
-    }
-
-    private void getDateZone(ActionEvent event){
-
-    }
-
     @FXML
     private void setListZone(){
         Thread thread = new Thread(()->{
@@ -122,15 +115,29 @@ public class SampleController implements Initializable {
     }
 
     @FXML
-    private void initializeSW(ActionEvent event){
+    private void selectedZone(MouseEvent event){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Stopwatch.fxml"));
-
+            tmp.setText(listZone.getId());
+            sl.searchSelectedZone(tmp);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/DateTimeZoneSelected.fxml"));
             Parent root = (Parent)loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
+        }catch(Exception e){
+            System.out.println(e);
+        }
 
+    }
+
+    @FXML
+    private void initializeSW(ActionEvent event){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/Stopwatch.fxml"));
+            Parent root = (Parent)loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
         }catch (Exception e){
             System.out.println(e);
         }

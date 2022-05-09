@@ -19,6 +19,8 @@ public class DateTimeZoneSelectedFX implements Initializable {
     @FXML
     private Label selectedDate;
 
+    @FXML
+    private Label selectedZone;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,8 +28,9 @@ public class DateTimeZoneSelectedFX implements Initializable {
         actualDate();
     }
 
-    public void searchSelectedZone(String selectedZone){
-        TimeZone tz = TimeZone.getTimeZone(selectedZone);
+    public void searchSelectedZone(Label selectedZone){
+
+        TimeZone tz = TimeZone.getTimeZone(selectedZone.getId());
         System.out.println(tz.getID());
     }
 

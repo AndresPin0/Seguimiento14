@@ -104,12 +104,14 @@ public class StopWatchFX implements Initializable {
 
     @FXML
     private void addLap(ActionEvent e){
+        String tmp = "";
+        tmp = stopwatch.getText();
+        String finalTmp = tmp;
         Thread thread = new Thread(()->{
-            String tmp = stopwatch.getText();
-            listLaps.getItems().add(tmp);
+            listLaps.refresh();
+            listLaps.getItems().add(finalTmp);
             System.out.println(stopwatch.getText());
         });
         thread.start();
-
     }
 }

@@ -21,7 +21,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ListView fx:id="listZone" layoutX="325.0" layoutY="51.0" onMouseClicked="#seeSelectedHour" prefHeight="250.0" prefWidth="236.0" style="-fx-background-color: #545E60;" />
+            <ListView fx:id="listZone" layoutX="325.0" layoutY="51.0" onMouseClicked="#selectedZone" prefHeight="250.0" prefWidth="236.0" style="-fx-background-color: #545E60;" />
             <Label layoutX="14.0" layoutY="14.0" text="Clock" textFill="WHITE">
                <font>
                   <Font size="24.0" />
