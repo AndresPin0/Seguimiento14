@@ -8,3 +8,7 @@
 - Pausar el cronometro.
 - Sacar un tiempo en el cronometro. (Lap)
 - Reiniciar el cronometro y la lista de laps.
+
+
+### Authors:
+* Andrés Pino `<link>` : <https://github.com/AndresPin0>
