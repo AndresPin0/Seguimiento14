@@ -1,6 +1,7 @@
 package application.Controller;
 
 
+import com.sun.javafx.scene.control.skin.LabeledText;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,8 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.*;
@@ -111,8 +114,13 @@ public class SampleController implements Initializable {
 
     @FXML
     private void selectedZone(MouseEvent event){
+        System.out.println(listZone.getSelectionModel().getSelectedItem());
+        //String tmp = listZone.getSelectionModel().getSelectedItem();
+        //sl.searchSelectedZone(tmp);
         try{
-            System.out.println(event.getPickResult().getIntersectedNode().accessibleTextProperty());
+            //System.out.println(event.getPickResult().getIntersectedNode().accessibleTextProperty());
+            //Text lc = (Text) event.getPickResult().getIntersectedNode();
+            //System.out.println(lc.getText());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/DateTimeZoneSelected.fxml"));
             Parent root = (Parent)loader.load();
             Stage stage = new Stage();
