@@ -14,7 +14,6 @@ public class Main extends Application {
         try {
             BorderPane root = (BorderPane)FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../FXML/Sample.fxml")));
             Scene scene = new Scene(root,586,328);
-            //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("../Styles/TableView.css")).toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("Clock");
             primaryStage.show();

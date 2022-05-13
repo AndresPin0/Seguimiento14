@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="608.0" style="-fx-background-color: #4F5658;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.StopWatchFX">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="608.0" style="-fx-background-color: #4267b2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.StopWatchFX">
    <children>
       <Label fx:id="stopwatch" layoutX="92.0" layoutY="108.0" prefHeight="60.0" prefWidth="201.0" text="00:00:00" textFill="WHITE">
          <font>
@@ -24,18 +23,18 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ListView fx:id="listLaps" layoutX="371.0" layoutY="51.0" prefHeight="279.0" prefWidth="215.0" style="-fx-background-color: #545E60;" />
-      <Button fx:id="lapButton" layoutX="54.0" layoutY="229.0" mnemonicParsing="false" onAction="#addLap" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Lap" textFill="WHITE">
+      <ListView fx:id="listLaps" layoutX="371.0" layoutY="51.0" prefHeight="279.0" prefWidth="215.0" style="-fx-background-color: #FFFF;" />
+      <Button fx:id="lapButton" layoutX="54.0" layoutY="229.0" mnemonicParsing="false" onAction="#addLap" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #FFFF;" text="Lap" textFill="#4267b2">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="ResetButton" layoutX="258.0" layoutY="229.0" mnemonicParsing="false" onAction="#resetStopwatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Reset" textFill="WHITE">
+      <Button fx:id="ResetButton" layoutX="258.0" layoutY="229.0" mnemonicParsing="false" onAction="#resetStopwatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #FFFF;" text="Reset" textFill="#4267b2">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="startButton" layoutX="156.0" layoutY="229.0" mnemonicParsing="false" onAction="#initializeStopWatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #545E60;" text="Start" textFill="WHITE">
+      <Button fx:id="startButton" layoutX="156.0" layoutY="229.0" mnemonicParsing="false" onAction="#initializeStopWatch" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #FFFF;" text="Start" textFill="#4267b2">
          <font>
             <Font size="18.0" />
          </font>

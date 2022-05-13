@@ -1,5 +1,4 @@
 package application.Controller;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class StopWatchFX implements Initializable {
 
-    private final ArrayList<String> laps = new ArrayList<String>();
+    //private final ArrayList<String> laps = new ArrayList<>();
 
     @FXML
     private ListView<String> listLaps;
@@ -49,7 +48,7 @@ public class StopWatchFX implements Initializable {
             initThread = true;
             running = true;
             startButtonThread();
-        }else if (startButton.getText().equals("Stop")){ //Preguntar al profesor por qué al momento de darle parar, se demora un segundo...
+        }else if (startButton.getText().equals("Stop")){
             running = false;
             initThread = false;
             System.out.println("Stop thread");
@@ -64,7 +63,13 @@ public class StopWatchFX implements Initializable {
             Thread thread = new Thread(()->{
                 try{
                     while (initThread){
-                        Thread.sleep(1000);
+
+                        for(int i=0 ; i<20 ; i++){
+                            Thread.sleep(50);
+                            if(!initThread){
+                                break;
+                            }
+                        }
                         seconds ++;
                         if (seconds>59){
                             seconds = 0;
@@ -74,12 +79,11 @@ public class StopWatchFX implements Initializable {
                             minutes = 0;
                             hours++;
                         }
+
                         System.out.println(seconds + "-" + Thread.currentThread());
                         String txt = (hours<=9?"0":"") + hours + ":" + (minutes<=9?"0":"") + minutes +":"+ (seconds<=9?"0":"") + seconds;
                         System.out.println(txt);
-                        Platform.runLater(()->{
-                            stopwatch.setText(txt);
-                        });
+                        Platform.runLater(()-> stopwatch.setText(txt));
                     }
                 }catch (Exception e){
                     System.out.println(e);
@@ -91,9 +95,9 @@ public class StopWatchFX implements Initializable {
 
     @FXML
     public void resetStopwatch(ActionEvent e){
-        //System.out.println(running);
+        System.out.println(running);
         if (!running){
-            listLaps.getItems().removeAll();
+            listLaps.getItems().clear();
             stopwatch.setText("00:00:00");
             seconds = 0;
             minutes = 0;
@@ -104,12 +108,13 @@ public class StopWatchFX implements Initializable {
 
     @FXML
     private void addLap(ActionEvent e){
-        String tmp = "";
+        String tmp = " ";
         tmp = stopwatch.getText();
         String finalTmp = tmp;
         Thread thread = new Thread(()->{
             listLaps.refresh();
-            listLaps.getItems().add(finalTmp);
+
+            Platform.runLater(()-> listLaps.getItems().add(finalTmp));
             System.out.println(stopwatch.getText());
         });
         thread.start();

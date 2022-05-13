@@ -14,6 +14,9 @@ public class DateTimeZoneSelectedFX implements Initializable {
     private Boolean stop = false;
 
     @FXML
+    private Label labelZone;
+
+    @FXML
     private Label zoneHour;
 
     @FXML
@@ -28,14 +31,12 @@ public class DateTimeZoneSelectedFX implements Initializable {
         actualDate();
     }
 
-    public void searchSelectedZone(Label selectedZone){
+    public void searchSelectedZone(String selectedZone){
 
-        TimeZone tz = TimeZone.getTimeZone(selectedZone.getId());
-        System.out.println(tz.getID());
+        System.out.println(selectedZone);
     }
 
-    private void actualTime() {
-
+    private void actualTime(){
         Thread thread = new Thread(()->{
             SimpleDateFormat sdt = new SimpleDateFormat("hh:mm:ss a");
             while (!stop){
@@ -46,7 +47,7 @@ public class DateTimeZoneSelectedFX implements Initializable {
                 }
                 final String currentTime = sdt.format(new Date());
                 Platform.runLater(()->{
-                    zoneHour.setText(currentTime);
+                    //zoneHour.setText(currentTime);
                 });
             }
         });
@@ -66,7 +67,6 @@ public class DateTimeZoneSelectedFX implements Initializable {
                 Platform.runLater(()->{
                     selectedDate.setText(currentDate);
                 });
-
             }
         });
         thread.start();

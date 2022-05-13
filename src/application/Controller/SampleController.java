@@ -2,8 +2,6 @@ package application.Controller;
 
 
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +17,7 @@ import java.io.IOException;
 import java.util.*;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
 
 public class SampleController implements Initializable {
     private DateTimeZoneSelectedFX sl;
@@ -80,6 +79,8 @@ public class SampleController implements Initializable {
                });
            }
         });
+
+
         thread.start();
     }
 
@@ -95,13 +96,7 @@ public class SampleController implements Initializable {
 
     @FXML
     private void seeSelectedHour(MouseEvent event) throws IOException {
-        listZone.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                selectedZone = listZone.getSelectionModel().getSelectedItem();
-                System.out.println(selectedZone);
-            }
-        });
+
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/DateTimeZoneSelected.fxml"));
             Parent root = (Parent)loader.load();
@@ -117,8 +112,7 @@ public class SampleController implements Initializable {
     @FXML
     private void selectedZone(MouseEvent event){
         try{
-            tmp.setText(listZone.getId());
-            sl.searchSelectedZone(tmp);
+            System.out.println(event.getPickResult().getIntersectedNode().accessibleTextProperty());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/DateTimeZoneSelected.fxml"));
             Parent root = (Parent)loader.load();
             Stage stage = new Stage();
